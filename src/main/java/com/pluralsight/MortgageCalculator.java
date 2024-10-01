@@ -16,6 +16,17 @@ public class MortgageCalculator {
                 (Math.pow(1 + monthlyInterestRate, totalPayments) - 1);
 
         System.out.println(monthlyPayment);
+
+
+        double principalLoan = 53000;
+        double monthlyInterest = 7.625 / 100 / 12;
+        int years = 15;
+        double nrOfMonthlyPayments = years * 12;
+
+        double monthlyPay = principalLoan * (monthlyInterest * Math.pow(1 + monthlyInterest, totalPayments))/
+                (Math.pow(1 + monthlyInterest, totalPayments)-1);
+
+        System.out.println(monthlyPay);
     }
 }
 
