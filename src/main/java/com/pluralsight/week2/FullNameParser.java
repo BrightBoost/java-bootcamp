@@ -11,7 +11,7 @@ public class FullNameParser {
         String fullname = scanner.nextLine();
 
         // split fullname input on the spaces and story in array string
-        String[] nameParts = fullname.split("\\s");
+        String[] nameParts = fullname.split(" ");
 
         // create variables for nameparts
         String firstName = "";
