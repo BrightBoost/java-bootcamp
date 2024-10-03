@@ -29,6 +29,6 @@ public class TheaterReservations {
         String ticketWord = nrOfTickets == 1 ? "ticket" : "tickets";
 
         // display confirmation
-        System.out.println(nrOfTickets + " " + ticketWord + " reserved for " + reservationDate + " under " + displayName);
+        System.out.println(nrOfTickets + " " + ticketWord + " reserved for " + reservationDate.format(dtf) + " under " + displayName);
     }
 }
