@@ -22,22 +22,22 @@ public class ObjectsExplained {
     }
 
     public static Reservation getReservationFromInput() {
+        Reservation reservation = new Reservation();
+
         // input
         System.out.println("Please enter your name:");
         String fullName = scanner.nextLine();
+        reservation.setFullName(fullName);
 
         System.out.println("What date will you be coming (MM/dd/yyyy):");
         String date = scanner.nextLine();
         // parse the date
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         LocalDate reservationDate = LocalDate.parse(date, dtf);
+        reservation.setDate(reservationDate);
 
         System.out.println("How many tickets would you like?");
         int nrOfTickets = scanner.nextInt();
-
-        Reservation reservation = new Reservation();
-        reservation.setDate(reservationDate);
-        reservation.setFullName(fullName);
         reservation.setNrOfTickets(nrOfTickets);
 
         return reservation;

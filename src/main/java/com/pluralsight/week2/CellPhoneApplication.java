@@ -5,6 +5,21 @@ import java.util.Scanner;
 public class CellPhoneApplication {
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        CellPhone cellPhone1 = createCellPhone();
+        CellPhone cellPhone2 = createCellPhone();
+
+        display(cellPhone1);
+        display(cellPhone2);
+
+        cellPhone1.dial(cellPhone2.getPhoneNumber());
+
+    }
+
+    public static void display(CellPhone cp) {
+        System.out.println(cp.getModel() + " | " + cp.getCarrier() + " | " + cp.getOwner() + " | " + cp.getPhoneNumber() + " | " + cp.getSerialNumber());
+    }
+
+    public static CellPhone createCellPhone() {
         CellPhone cp = new CellPhone();
 
         System.out.println("What is the serial number?");
@@ -28,7 +43,8 @@ public class CellPhoneApplication {
         String owner = scanner.nextLine();
         cp.setOwner(owner);
 
-        System.out.println(cp.getModel() + " | " + cp.getCarrier() + " | " + cp.getOwner() + " | " + cp.getPhoneNumber() + " | " + cp.getSerialNumber());
-
+        return cp;
     }
+
+
 }
