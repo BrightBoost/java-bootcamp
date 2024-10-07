@@ -20,11 +20,26 @@ public class App {
         theGoat1.setGender("male");
         theGoat1.setSports(new String[]{"soccer"});
 
+        theGoat.describeSportsPlayer();
         theGoat.saySomethingAfterGame(true);
         theGoat.saySomethingAfterGame(false);
         System.out.println("*********");
+        theGoat1.describeSportsPlayer();
         theGoat1.saySomethingAfterGame(true);
         theGoat1.saySomethingAfterGame(false);
+        System.out.println("*********");
+
+        // create sportsplayer with the args constructor
+        SportsPlayer theGoat2 = new SportsPlayer("LeBron", new String[]{"basket ball"}, LocalDate.of(1984, 12, 30), "male", 23, "** does a happy dance **");
+        theGoat2.describeSportsPlayer();
+        theGoat2.saySomethingAfterGame(true);
+        theGoat2.saySomethingAfterGame(false);
+
+        System.out.println(theGoat2);
+
+        // use overloaded versions
+        System.out.println(true);
+        System.out.println();
 
     }
 }
