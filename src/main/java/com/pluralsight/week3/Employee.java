@@ -17,6 +17,10 @@ public class Employee {
         System.out.println(name + " worked for " + hoursWorked + " at rate " + payRate + ". This results in gross pay: " + calcGrossPay());
     }
 
+    public String toCsvLine() {
+        return employeeId + "|" + name + "|" + calcGrossPay() + "\n";
+    }
+
     public double calcGrossPay() {
         return this.payRate * this.hoursWorked;
     }
