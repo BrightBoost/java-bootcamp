@@ -1,6 +1,8 @@
 package com.pluralsight.week3;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PayrollCalculatorExtended {
@@ -38,6 +40,36 @@ public class PayrollCalculatorExtended {
 
     }
     public static void withArrays() {
+        try {
+            List<Employee> employees = new ArrayList<>();
+
+            // read csv file again, to get the employees
+            BufferedReader br = new BufferedReader(new FileReader("employees.csv"));
+
+            // turn csv file into employees arr
+            String line;
+            //skip first line with column names
+            br.readLine();
+            int index = 0;
+            while((line = br.readLine()) != null) {
+                String[] employeeData = line.split("\\|");
+                employees.add(new Employee(Integer.parseInt(employeeData[0]), employeeData[1], Double.parseDouble(employeeData[2]), Double.parseDouble(employeeData[3])));
+                index++;
+            }
+
+            // display info for each employee
+            for(Employee e: employees) {
+                e.display();
+            }
+
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public static void withLists() {
         try {
             // read the csv file to get the nr of employees, to use for arr creation
             BufferedReader br = new BufferedReader(new FileReader("employees.csv"));
