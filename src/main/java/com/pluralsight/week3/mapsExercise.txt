@@ -1,0 +1,3 @@
+1. Create a map for name of the people your breakout room and their favorite fruit
+2. Create a map for numbers 1-5 and their squared counter parts (2 and 4, 3 and 9, 4 and 16)
+3. Create a map for a string owner and a list of puppies he/she owns
