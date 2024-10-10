@@ -12,6 +12,7 @@ public class ListsExplained {
         String student3 = "Osmig";
         String student4 = "Mordecai";
 
+
         // create 1 variable to hold all of the students
         String[] studentsArr = {"Joezari", "Nima", "Osmig", "Mordecai"};
 
