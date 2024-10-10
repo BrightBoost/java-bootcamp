@@ -39,9 +39,10 @@ public class PayrollCalculatorExtended {
         }
 
     }
-    public static void withArrays() {
+    public static void withLists() {
         try {
             List<Employee> employees = new ArrayList<>();
+
 
             // read csv file again, to get the employees
             BufferedReader br = new BufferedReader(new FileReader("employees.csv"));
@@ -69,7 +70,7 @@ public class PayrollCalculatorExtended {
 
     }
 
-    public static void withLists() {
+    public static void withArrays() {
         try {
             // read the csv file to get the nr of employees, to use for arr creation
             BufferedReader br = new BufferedReader(new FileReader("employees.csv"));
