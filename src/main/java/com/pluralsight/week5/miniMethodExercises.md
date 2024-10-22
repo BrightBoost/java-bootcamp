@@ -16,3 +16,10 @@
 4. Create a method that returns the suppliercode
 5. Create a method order that accepts an amount, if it's in stock, return true and print that the order (use the name) has been placed
     - If not in stock, print that
+
+
+Additional overloading:
+- Add another applyDiscount for book, that takes the percentage and a startdate and an enddate, and only applies the discount if the current date is between the start and enddate
+- Walk in dog: allow for a list of people walking the dog
+- Walk in dog: allow for a name and a number of minutes that the dog will be walked
+- order: allow for a list of amounts (so multiple orders in one)
