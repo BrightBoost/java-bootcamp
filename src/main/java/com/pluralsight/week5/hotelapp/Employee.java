@@ -1,5 +1,7 @@
 package com.pluralsight.week5.hotelapp;
 
+import java.time.LocalTime;
+
 public class Employee {
     // 1 create attributes
     private int employeeId;
@@ -7,6 +9,9 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
+
+    private double latestPunchIn;
+    private boolean currentlyWorking;
 
     // 2 generate getters and setters
 
@@ -66,11 +71,13 @@ public class Employee {
     }
 
     public double getRegularHours() {
-        if(hoursWorked <= 40) {
-            return hoursWorked;
-        } else {
-            return 40;
-        }
+//        if(hoursWorked <= 40) {
+//            return hoursWorked;
+//        } else {
+//            return 40;
+//        }
+        // sameem special
+        return hoursWorked <= 40 ? hoursWorked : 40; // ternary statement expression ? iftruevalue : elsevalue
     }
     public double getOvertimeHours() {
         if(hoursWorked <= 40) {
@@ -79,5 +86,26 @@ public class Employee {
             return hoursWorked - 40;
         }
     }
+
+    // methods
+    public void punchIn(double startTime) {
+        this.latestPunchIn = startTime;
+        this.currentlyWorking = true;
+
+    }
+
+    public double punchOut(double endTime) {
+        if(!this.currentlyWorking) {
+            return 0;
+        } else {
+            double hoursLatestShift = endTime - this.latestPunchIn;
+            this.hoursWorked += hoursLatestShift;
+            this.currentlyWorking = false;
+            return hoursLatestShift;
+        }
+
+
+    }
+
 
 }
