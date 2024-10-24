@@ -60,12 +60,20 @@ public class Room {
     }
 
     // methods
-    public void checkIn() {
-        this.occupied = true;
-        this.dirty = true;
+    public boolean checkIn() {
+        if(!this.occupied && !this.dirty) {
+            this.occupied = true;
+            this.dirty = true;
+            return true;
+        }
+        return false;
+
     }
 
     public void checkout() {
+        if(isAvailable()) {
+            throw new IllegalStateException();
+        }
         this.occupied = false;
     }
 

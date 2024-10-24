@@ -5,5 +5,11 @@ public class SimpleCalculator {
         return x + y;
     }
 
+    public double divideTwoNumbers(double x, double y) {
+        return x / y;
+    }
+
+
+
 
 }

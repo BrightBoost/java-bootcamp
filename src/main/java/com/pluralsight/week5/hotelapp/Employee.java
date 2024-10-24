@@ -55,6 +55,22 @@ public class Employee {
         this.hoursWorked = hoursWorked;
     }
 
+    public double getLatestPunchIn() {
+        return latestPunchIn;
+    }
+
+    public void setLatestPunchIn(double latestPunchIn) {
+        this.latestPunchIn = latestPunchIn;
+    }
+
+    public boolean isCurrentlyWorking() {
+        return currentlyWorking;
+    }
+
+    public void setCurrentlyWorking(boolean currentlyWorking) {
+        this.currentlyWorking = currentlyWorking;
+    }
+
     // 3 generate constructor with all the attributes
 
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
