@@ -4,6 +4,18 @@ public class Vehicle {
     private String color;
     private int maxSpeed;
 
+    protected int demo;
+
+    public Vehicle(String color, int maxSpeed, int demo) {
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+        this.demo = demo;
+    }
+
+    public Vehicle(){
+
+    }
+
     public String getColor() {
         return color;
     }
