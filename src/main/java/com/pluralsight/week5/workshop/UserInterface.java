@@ -94,9 +94,9 @@ public class UserInterface {
     }
     public void processGetByYearRequest() {
         System.out.println("What is min and max?");
-        double min = scanner.nextDouble();
+        int min = scanner.nextInt();
         scanner.nextLine();
-        double max = scanner.nextDouble();
+        int max = scanner.nextInt();
         scanner.nextLine();
         List<Vehicle> vehicleList = dealership.getVehiclesByYear(min, max);
         displayVehicles(vehicleList);
@@ -109,9 +109,9 @@ public class UserInterface {
     }
     public void processGetByMileageRequest() {
         System.out.println("What is min and max?");
-        double min = scanner.nextDouble();
+        int min = scanner.nextInt();
         scanner.nextLine();
-        double max = scanner.nextDouble();
+        int max = scanner.nextInt();
         scanner.nextLine();
         List<Vehicle> vehicleList = dealership.getVehiclesByMileage(min, max);
         displayVehicles(vehicleList);
@@ -129,9 +129,31 @@ public class UserInterface {
 
     public void processAddVehicleRequest() {
         // get all the data to add a vehicle and create a new vehicle
-        // test the application
-        DealershipFileManager.saveDealership(this.dealership);
+        System.out.println("Vin?");
+        int vin = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Year?");
+        int year = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Make");
+        String make = scanner.nextLine();
+        System.out.println("Model?");
+        String model = scanner.nextLine();
+        System.out.println("Vehicle type?");
+        String vehicleType = scanner.nextLine();
+        System.out.println("Color?");
+        String color = scanner.nextLine();
+        System.out.println("Odemeter?");
+        int odometer = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Price?");
+        double price = scanner.nextDouble();
+        scanner.nextLine();
 
+        Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+
+        this.dealership.addVehicle(vehicle);
+        DealershipFileManager.saveDealership(this.dealership);
     }
 
     public void processRemoveVehicleRequest() {

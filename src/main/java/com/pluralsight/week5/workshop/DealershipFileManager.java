@@ -16,6 +16,7 @@ public class DealershipFileManager {
                 Vehicle vehicle = new Vehicle(Integer.parseInt(vehicleParts[0]), Integer.parseInt(vehicleParts[1]), vehicleParts[2], vehicleParts[3], vehicleParts[4], vehicleParts[5], Integer.parseInt(vehicleParts[6]), Double.parseDouble(vehicleParts[7]));
                 dealership.addVehicle(vehicle);
             }
+            bufferedReader.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -32,6 +33,7 @@ public class DealershipFileManager {
             for(Vehicle v : dealership.getInventory()) {
                 bufferedWriter.write("\n" + v.toFileString());
             }
+            bufferedWriter.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
