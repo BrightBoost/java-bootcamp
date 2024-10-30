@@ -6,6 +6,7 @@ import java.util.List;
 public class Program {
     public static void main(String[] args) {
         Animal zia1 = new Cat();
+        Animal zia5 = new Feline();
         Feline zia2 = new Cat();
         Cat zia3 = new Cat();
         Object zia4 = new Cat();
@@ -13,7 +14,7 @@ public class Program {
 
         try {
             zia1.eat();
-
+            zia5.eat();
            // zia2.eat();
         } catch (AccidentallyAteOwnerException e) {
             throw new RuntimeException(e);
