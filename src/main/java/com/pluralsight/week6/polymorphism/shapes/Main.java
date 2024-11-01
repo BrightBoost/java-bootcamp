@@ -4,7 +4,6 @@ import com.pluralsight.week3.searchinventorymap.Product;
 
 public class Main {
     public static void main(String[] args) {
-        Shape s1 = new Shape();
         Shape s2 = new Square(4);
         Shape s3 = new Circle(4);
 

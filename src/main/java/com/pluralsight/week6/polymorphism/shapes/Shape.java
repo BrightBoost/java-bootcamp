@@ -1,6 +1,6 @@
 package com.pluralsight.week6.polymorphism.shapes;
 
-public class Shape {
+public abstract class Shape {
 
     private String color;
 
@@ -12,10 +12,7 @@ public class Shape {
         this.color = color;
     }
 
-    public double calculateArea() {
-        System.out.println("Calc area");
-        return 0;
-    }
+    public abstract double calculateArea();
 
     public double calculateCircumference() {
         System.out.println("Calc the around");
