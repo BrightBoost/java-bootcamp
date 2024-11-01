@@ -48,6 +48,6 @@ public class SalesContract extends Contract {
     @Override
     public String toCsvEntry() {
         //SALE|20210928|Dana Wyatt|dana@texas.com|10112|1993|Ford|Explorer|SUV|Red|525123|995.00|49.75|100.00|295.00|1439.75|NO|0.00
-        return "SALE|" + getDate() + "|" + getCustomerName() + "|" + getCustomerEmail() + "|" + getVehicleSold().toFileString() + "|" + (SALES_TAX/100 * getVehicleSold().getPrice()) + "|" + RECORDING_FEE + "|" + processingFee + "|" + getTotalPrice() + (isFinance() ? "YES|" : "NO|") + getMonthlyPayment();
+        return "SALE|" + getDate() + "|" + getCustomerName() + "|" + getCustomerEmail() + "|" + getVehicleSold().toFileString() + "|" + (SALES_TAX/100 * getVehicleSold().getPrice()) + "|" + RECORDING_FEE + "|" + processingFee + "|" + getTotalPrice() + "|" + (isFinance() ? "YES|" : "NO|") + getMonthlyPayment();
     }
 }

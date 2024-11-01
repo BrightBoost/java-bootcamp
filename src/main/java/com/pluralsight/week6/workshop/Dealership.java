@@ -109,6 +109,15 @@ public class Dealership {
         return matchingVehicles;
     }
 
+    public Vehicle getVehiclesVin(int vin) {
+        for(Vehicle v: inventory) {
+            if(v.getVin() == vin) {
+                return v;
+            }
+        }
+        return null;
+    }
+
     public List<Vehicle> getAllVehicles() {
         return inventory;
     }
@@ -118,10 +127,16 @@ public class Dealership {
     }
 
     public void removeVehicle(int vin) {
+        Vehicle toBeRemoved = null;
         for(Vehicle v: inventory) {
             if(v.getVin() == vin) {
-                inventory.remove(v);
+                toBeRemoved = v;
+                break;
             }
+        }
+
+        if(toBeRemoved != null) {
+            inventory.remove(toBeRemoved);
         }
     }
 

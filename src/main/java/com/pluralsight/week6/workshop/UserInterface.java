@@ -170,8 +170,40 @@ public class UserInterface {
 
     public void processCreateContract() {
         // sales or lease
-        // if lease - ask lease questions
-        // if sales - ask sales questions
+        System.out.println("Sale or lease?");
+        String saleOrLease = scanner.nextLine();
+        System.out.println("Customer name?");
+        String customerName = scanner.nextLine();
+        System.out.println("Customer email?");
+        String customerEmail = scanner.nextLine();
+        System.out.println("Date of contract?");
+        String date = scanner.nextLine();
+        System.out.println("Vehicle vin?");
+        String vin = scanner.nextLine();
+        Vehicle vehicle = dealership.getVehiclesVin(Integer.parseInt(vin));
 
+        Contract contract = createContract(saleOrLease, date, customerName, customerEmail, vehicle);
+
+        ContractFileManager.saveContract(contract);
+        dealership.removeVehicle(Integer.parseInt(vin));
+        DealershipFileManager.saveDealership(dealership);
+    }
+
+    public Contract createContract(String saleOrLease, String date, String customerName, String customerEmail, Vehicle vehicle) {
+        boolean finance;
+        Contract contract = null;
+        if(saleOrLease.equalsIgnoreCase("sale")) {
+            System.out.println("Finance? y/n");
+            String financeChoice = scanner.nextLine();
+            finance = financeChoice.equalsIgnoreCase("y");
+            contract = new SalesContract(date, customerName, customerEmail, vehicle, finance);
+        } else if(saleOrLease.equalsIgnoreCase("lease")) {
+            contract = new LeaseContract(date, customerName, customerEmail, vehicle);
+        }
+        else {
+            System.out.println("We don't offer " + saleOrLease);
+        }
+
+        return contract;
     }
 }
