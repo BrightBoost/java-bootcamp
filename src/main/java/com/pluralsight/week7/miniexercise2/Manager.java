@@ -6,7 +6,6 @@ public class Manager extends FulltimeEmployee implements Promotable{
     Override
     public void promote() {
         System.out.println("Manager promoted to lead manager");
-        ArrayList
     }
 
     @Override
