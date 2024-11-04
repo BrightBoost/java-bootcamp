@@ -1,6 +1,6 @@
 package com.pluralsight.week7.finance;
 
-public class Account implements Valuable {
+public abstract class Account implements Valuable {
     private String name;
     private String accountNumber;
     private double balance;
