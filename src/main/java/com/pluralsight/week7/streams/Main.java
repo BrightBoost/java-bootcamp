@@ -24,7 +24,7 @@ public class Main {
             System.out.println(cartoon);
         }
 
-        cartoonMatches.stream().forEach(System.out::println);
+        cartoonMatches.stream().forEach(p -> System.out.println(p));
 
 
         // calc average age
@@ -63,6 +63,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What name?");
         String name = scanner.nextLine();
+
+        //List<Person> matches = people.stream()
+        // .filter(p -> p.getLastName().contains(name) || p.getFirstName().contains(name))
+        // .toList();
 
         List<Person> matches = new ArrayList<>();
 
