@@ -1,6 +1,5 @@
 package com.pluralsight.week7.lambdaexpressions.streams;
 
-import java.util.function.Consumer;
 
 public class Person implements Comparable {
     private String name;
