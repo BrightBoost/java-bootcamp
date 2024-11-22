@@ -13,3 +13,8 @@
 2024-11-22 00:12:40 [main] WARN  App - This is warn : ☕
 2024-11-22 00:12:40 [main] ERROR App - This is error : ☕
 2024-11-22 00:12:40 [main] FATAL App - This is fatal : ☕
+2024-11-22 19:32:58 [main] DEBUG App - This is debug : ☕
+2024-11-22 19:32:58 [main] INFO  App - This is info : ☕
+2024-11-22 19:32:58 [main] WARN  App - This is warn : ☕
+2024-11-22 19:32:58 [main] ERROR App - This is error : ☕
+2024-11-22 19:32:58 [main] FATAL App - This is fatal : ☕
