@@ -6,8 +6,8 @@ import java.sql.*;
 public class DatabaseConnectionExceptionsTryWithResources {
     public static void main(String[] args) {
 
-        try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "root", "root");
-            PreparedStatement statement = connection.prepareStatement("SELECT city FROM cityy");
+        try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", args[0], args[1]);
+            PreparedStatement statement = connection.prepareStatement("SELECT city FROM city");
             ResultSet rs = statement.executeQuery()
         ) {
             // process results
