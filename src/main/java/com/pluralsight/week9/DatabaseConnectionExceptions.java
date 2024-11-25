@@ -1,5 +1,6 @@
 package com.pluralsight.week9;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class DatabaseConnectionExceptions {
@@ -14,7 +15,7 @@ public class DatabaseConnectionExceptions {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "root", "root");
 
             // create statement
-            String query = "SELECT city FROM cityy";
+            String query = "SELECT city FROM city";
             statement = connection.prepareStatement(query);
 
             // execute query
