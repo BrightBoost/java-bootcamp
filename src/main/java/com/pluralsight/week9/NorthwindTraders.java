@@ -7,7 +7,7 @@ public class NorthwindTraders {
 
     private static Scanner scanner = new Scanner(System.in);
     private static Connection connection;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         init(args);
         int menuChoice = menu();
         switch(menuChoice) {
@@ -25,6 +25,8 @@ public class NorthwindTraders {
                 System.exit(0);
                 break;
         }
+
+        connection.close();
     }
 
     public static void init(String[] args) {
