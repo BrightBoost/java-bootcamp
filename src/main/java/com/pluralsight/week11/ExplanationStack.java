@@ -16,6 +16,7 @@ public class ExplanationStack {
         System.out.println(stack);
         System.out.println(stack.pop());
         System.out.println(stack);
+        System.out.println(stack.size());
 
     }
 }
